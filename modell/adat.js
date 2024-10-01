@@ -1,4 +1,4 @@
-const kutyaLISTA = [
+export const kutyaLISTA = [
     {
         nev: "Buksi",
         kor: 9,

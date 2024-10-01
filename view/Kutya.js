@@ -1,7 +1,7 @@
 
 export default class Kutya{
     #id;
-    #kutyaAdatok = []
+    #kutyaAdatok;
     #szuloElem;
     kattGomb;
 
@@ -14,7 +14,7 @@ export default class Kutya{
 
     #megjelenit(){
         let txt = `
-            <div class = col-lg-4>
+            <div class = "col-lg-4">
                 <p>${this.#kutyaAdatok}</p>
                 <button>Örökbefogad</button>
             </div>

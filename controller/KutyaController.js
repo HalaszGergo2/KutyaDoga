@@ -7,12 +7,16 @@ export default class KutyaController{
         this.kutyaModell=new KutyaModell() 
         new Kenel(this.kutyaModell.getLISTA(), this.megjelenitELEM)
         this.#esemenyKezelo()
+        console.log(this.kutyaModell.getKOSARLISTA())
     }
 
     #esemenyKezelo(){
         $(window).on("katt", (event)=>{
             this.kutyaModell.dbCsokkento(event.detail)
-            new Kenel(this.kutyaModell.getList(),this.megjelenitELEM)
+            this.kutyaModell.kosarListaba(event.detail)
+            this.megjelenitELEM.empty();
+            new Kenel(this.kutyaModell.getLISTA(),this.megjelenitELEM)
+            
         })
     }
 }

@@ -1,2 +1,2 @@
-import KutyaController from "../controller/KutyaController.js";
+import KutyaController from "./controller/KutyaController.js";
 new KutyaController();

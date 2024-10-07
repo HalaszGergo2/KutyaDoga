@@ -1,5 +1,39 @@
+
 main{
-    max-width: 800px;
+    max-width: 900px;
     text-align: center;
     margin: auto;
+
+}
+article{
+    padding: 25px;
+}
+footer{
+    padding-top: 25px;
+}
+
+
+.megjelenito {
+    display: flex; 
+    flex-wrap: wrap; 
+
+}
+
+.kutyak {
+    border: 1px solid burlywood;
+    flex: 1 1 30%;
+    box-sizing: border-box;
+    padding: 10px; 
+}
+
+@media (max-width: 700px) {
+    .megjelenito {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 5px; 
+    }
+
+    .kutyak {
+        flex: 1 1 100%; 
+    }
 }

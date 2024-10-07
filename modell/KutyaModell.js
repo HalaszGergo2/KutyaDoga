@@ -2,8 +2,6 @@ import {kutyaLISTA} from "../modell/adat.js";
 export default class KutyaModell{
     #LISTA = []
     #kosarLISTA = []
-    #db = 5;
-    #elem;
     
 
     constructor(){
@@ -11,22 +9,27 @@ export default class KutyaModell{
     }
 
     #listaTolt(){
-        //for (let index = 0; index < kutyaLISTA.length; index++) {
-            this.#elem = kutyaLISTA
-            this.#LISTA += this.#elem
+            this.#LISTA = kutyaLISTA
             console.log(this.#LISTA)
-        //}
     }
 
-    #setElem(){
-        
-    }
 
     getLISTA(){
         return this.#LISTA
     }
 
     dbCsokkento(index){
-        this.#LISTA[index] 
+        if (this.#LISTA[index].db > 0) {
+            this.#LISTA[index].db--; 
+            
+        }
+    }
+
+    kosarListaba(index){
+        this.#kosarLISTA.push(this.#LISTA[index])
+    }
+
+    getKOSARLISTA(){
+        return this.#kosarLISTA
     }
 }

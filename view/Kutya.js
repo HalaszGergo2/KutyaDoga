@@ -10,23 +10,30 @@ export default class Kutya{
         this.#id = id
         this.#szuloElem = szuloElem
         this.#megjelenit()
+        this.#gombKatt()
     }
 
     #megjelenit(){
         let txt = `
-            <div class = "col-lg-4">
-                <p>${this.#kutyaAdatok}</p>
+            <div class = "kutyak col-lg-4">
+                <p>Név: ${this.#kutyaAdatok.nev}</p>
+                <p>Kor: ${this.#kutyaAdatok.kor}</p>
+                <p>Nem: ${this.#kutyaAdatok.nem}</p>
+                <p>Darabszám: ${this.#kutyaAdatok.db}</p>
                 <button>Örökbefogad</button>
             </div>
         `
+        
         this.#szuloElem.append(txt)
+        this.kattGomb = this.#szuloElem.find('button').last();
+        
     }
 
 
     #gombKatt(){
         this.kattGomb.on("click", ()=>
         {
-            const gombEsemeny = new CustomEvent("katt", {detail:this.#id})
+            const gombEsemeny = new CustomEvent("katt", { detail: this.#id });
             window.dispatchEvent(gombEsemeny)
         })
     }
